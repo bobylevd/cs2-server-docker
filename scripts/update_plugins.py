@@ -123,8 +123,7 @@ def download_matchzy(file_path="scripts/config.yaml"):
     latest = response.json()
     version = latest["tag_name"]
 
-    platform = config['platform']
-    asset_name = f"MatchZy-{version}-with-cssharp-{platform}.zip"
+    asset_name = f"MatchZy-{version}.zip"
 
     for asset in latest["assets"]:
         if asset_name in asset["name"]:
@@ -145,7 +144,7 @@ def download_matchzy(file_path="scripts/config.yaml"):
             break
 
 if __name__ == "__main__":
-    # download_metamod()
-    # download_css()
-    # patch_gameinfo()
+    download_metamod()
+    download_css()
+    patch_gameinfo()
     download_matchzy()
