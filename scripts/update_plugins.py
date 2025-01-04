@@ -79,32 +79,38 @@ def download_css(file_path="scripts/config.yaml"):
             break
 
 
-
 def patch_gameinfo():
     file_path = "cs2/game/csgo/gameinfo.gi"
-    pattern = r"Game_LowViolence\s*csgo_lv // Perfect World content override"
-    line_to_add = "\t\t\tGame\tcsgo/addons/metamod"
+    pattern = "// Perfect World content override"
+    metamod_path = "csgo/addons/metamod"
+    line_to_add = f"\n\t\t\tGame\t{metamod_path}\n"
     check_regex = r"^\s*Game\s*csgo/addons/metamod"
 
     # Read file content
-    with open(file_path, 'r') as f:
-        content = f.read()
+    with open(file_path, "r") as f:
+        content = f.readlines()
 
-    # Check if line already exists
-    if re.search(check_regex, content, re.MULTILINE):
-        print(f"{file_path} already patched for Metamod.")
+    right_line = -1
+    for i, line in enumerate(content):
+        if metamod_path in line:
+            print(f"{file_path} already patched for Metamod.")
+            # metamod is already in the gameinfo
+            return
+        if pattern in line:
+            right_line = i
+        if right_line > 0 and i > right_line + 20:
+            # ok, right line is found and in the next 20 lines there's no metamod installed
+            break
+
+    if right_line < 0:
+        print(f"Couldn't find the right line in {file_path}.")
         return
-
-    # Add line after pattern
-    new_content = re.sub(
-        pattern,
-        lambda m: f"{m.group()}\n{line_to_add}",
-        content
-    )
+    # Insert line
+    content.insert(right_line + 1, line_to_add)
 
     # Write modified content back
-    with open(file_path, 'w') as f:
-        f.write(new_content)
+    with open(file_path, "w") as f:
+        f.writelines(content)
     print(f"{file_path} successfully patched for Metamod.")
 
 
