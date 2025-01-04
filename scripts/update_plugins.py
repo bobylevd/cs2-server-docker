@@ -143,8 +143,112 @@ def download_matchzy(file_path="scripts/config.yaml"):
                 print(f"Extracted to {game_path}")
             break
 
+
+
+def download_retakes():
+    api_url = "https://api.github.com/repos/B3none/cs2-retakes/releases/latest"
+    response = requests.get(api_url)
+    latest = response.json()
+    version = latest["tag_name"]
+
+    asset_name = f"cs2-retakes-{version}.zip"
+    second_asset = f"cs2-retakes-shared-{version}.zip"
+
+    for asset in latest["assets"]:
+        if asset_name in asset["name"]:
+            response = requests.get(asset["browser_download_url"])
+            if response.status_code == 200:
+                zip_path = asset["name"]
+
+                with open(zip_path, "wb") as f:
+                    f.write(response.content)
+
+                game_path = "cs2/game/csgo/addons/counterstrikesharp/plugins"
+
+                with zipfile.ZipFile(zip_path) as zip_ref:
+                    zip_ref.extractall(game_path)
+
+                os.unlink(zip_path)
+                print(f"Extracted to {game_path}")
+
+        elif second_asset in asset["name"]:
+            response = requests.get(asset["browser_download_url"])
+            if response.status_code == 200:
+                zip_path = asset["name"]
+
+                with open(zip_path, "wb") as f:
+                    f.write(response.content)
+
+                game_path = "cs2/game/csgo"
+
+                with zipfile.ZipFile(zip_path) as zip_ref:
+                    zip_ref.extractall(game_path)
+
+                os.unlink(zip_path)
+                print(f"Extracted to {game_path}")
+            break
+
+def download_instadefuse():
+
+    api_url = "https://api.github.com/repos/B3none/cs2-instadefuse/releases/latest"
+    response = requests.get(api_url)
+    latest = response.json()
+    version = latest["tag_name"]
+
+    asset_name = f"cs2-instadefuse-{version}.zip"
+
+    for asset in latest["assets"]:
+        if asset_name in asset["name"]:
+            response = requests.get(asset["browser_download_url"])
+            if response.status_code == 200:
+                zip_path = asset["name"]
+
+                with open(zip_path, "wb") as f:
+                    f.write(response.content)
+
+                game_path = "cs2/game/csgo/addons/counterstrikesharp/plugins"
+
+                with zipfile.ZipFile(zip_path) as zip_ref:
+                    zip_ref.extractall("cs2/game/csgo")
+
+                os.unlink(zip_path)
+                print(f"Extracted to {game_path}")
+            break
+
+
+def download_modemanager():
+
+    api_url = "https://api.github.com/repos/nickj609/GameModeManager/releases/latest"
+    response = requests.get(api_url)
+    latest = response.json()
+    version = latest["tag_name"]
+
+    asset_name = f"GameModeManager_{version}.zip"
+
+    for asset in latest["assets"]:
+        if asset_name in asset["name"]:
+            response = requests.get(asset["browser_download_url"])
+            if response.status_code == 200:
+                zip_path = asset["name"]
+
+                with open(zip_path, "wb") as f:
+                    f.write(response.content)
+
+                game_path = "cs2/game/csgo"
+
+                with zipfile.ZipFile(zip_path) as zip_ref:
+                    zip_ref.extractall("cs2/game/csgo")
+
+                os.unlink(zip_path)
+                print(f"Extracted to {game_path}")
+            break
+
+
 if __name__ == "__main__":
     download_metamod()
     download_css()
     patch_gameinfo()
     download_matchzy()
+    download_retakes()
+    download_instadefuse()
+    download_modemanager()

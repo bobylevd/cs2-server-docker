@@ -1,0 +1,374 @@
+// Values here override the default gamemodes.txt
+// https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive/Game_Modes
+
+"GameModes_Server.txt"
+{
+	"gameTypes"
+	{
+		"classic"
+		{
+			"gameModes"
+			{
+				"casual"
+				{
+					"maxplayers"			"64"
+					"exec"
+					{
+						"exec" "gamemode_casual_last.cfg"
+					}
+					// Map groups for online modes
+					"mapgroupsMP"
+					{
+						//Other Maps Groups
+						"mg_1v1"			"50"
+						"mg_bhop"			"51"
+						"mg_kz"				"52"
+						"mg_surf"			"53"
+						"mg_minigames"		"54"
+						"mg_scoutzknivez"	"55"
+						"mg_course"			"56"
+						"mg_hns"			"57"
+						"mg_soccer"			"58"
+						"mg_gg"				"59"
+						"mg_awp"			"60"
+						"mg_aim"			"61"
+						"mg_prefire"		"62"
+						"mg_deathrun"		"63"
+						"mg_battleroyale"	"64"
+						"mg_casual-1.6"		"65"
+						"mg_45"				"66"
+					}
+				}
+
+				"competitive"
+				{
+					"maxplayers"			"64"
+					"exec"
+					{
+						"exec" "gamemode_competitive_last.cfg"
+					}
+					// Map groups for online modes
+					"mapgroupsMP"
+					{
+						// team lobby map veto
+						"mg_comp"			"50"
+					}
+				}
+
+				// Wingman
+				"scrimcomp2v2"
+				{
+					"maxplayers"			"64"
+					"exec"
+					{
+						"exec" "gamemode_competitive2v2_last.cfg"
+					}
+					// Map groups for online modes
+					"mapgroupsMP"
+					{
+						"mg_wingman"		"50"
+					}
+				}
+
+				"deathmatch"
+				{
+					"maxplayers"			"64"
+					"exec"
+					{
+						"exec" "gamemode_deathmatch_last.cfg"
+					}
+					// Map groups for online modes
+					"mapgroupsMP"
+					{
+						"mg_dm"		"50"
+					}
+				}
+			}
+		}
+	}
+	"mapgroups"
+	{
+		"mg_active"
+		{
+			"name"					"mg_active"
+			"displayname"			"Active"
+			"maps"
+			{
+				"de_ancient"	""
+				"de_anubis"		""
+				"de_inferno"	""
+				"de_mirage"		""
+				"de_nuke"		""
+				"de_dust2"		""
+				"de_vertigo"	""
+			}
+		}
+		"mg_comp"
+		{
+			"name"			"mg_comp"
+			"displayname"			"Competitive"
+			"maps"
+			{
+				"cs_italy"			""
+				"cs_office"			""
+				"de_vertigo"		""
+				"de_ancient"		""
+				"de_anubis"			""
+				"de_dust2"			""
+				"de_inferno"		""
+				"de_mirage"			""
+				"de_nuke"			""
+				"de_train"			""
+				"de_basalt"			""
+				"de_edin"			""
+				"de_overpass"		""
+				"de_vertigo"		""
+				"workshop/3071005299/de_assembly"		""
+				"workshop/3329387648/de_cbble"		""
+				"workshop/3070244931/de_cache"		""
+				"workshop/3079872050/de_pipeline"		""
+				"workshop/3075706807/de_biome"		""
+				"workshop/3070346180/mp_raid"		""
+				"workshop/3070766070/de_mutiny"		""
+				"workshop/3070594412/cs_assault"		""
+				"workshop/3072352643/de_ruins_d_prefab"		""
+				"workshop/3089953774/cs_militia"		""
+				"workshop/3070960099/de_aztec"		""
+				"workshop/3108513658/de_akiba"		""
+				"workshop/3236615060/cs_insertion2"		""
+				"workshop/3070284539/de_train"		""
+				"workshop/3152430710/de_mills"		""
+				"workshop/3121217565/de_thera"		""
+				"workshop/3073892687/de_season"		""
+			}
+		}
+		"mg_wingman"
+		{
+			"name"			"mg_wingman"
+			"displayname"			"Wingman"
+			"maps"
+			{
+				"cs_italy"			""
+				"cs_office"			""
+				"de_vertigo"		""
+				"de_ancient"		""
+				"de_anubis"			""
+				"de_dust2"			""
+				"de_inferno"		""
+				"de_mirage"			""
+				"de_nuke"			""
+				"de_train"			""
+				"de_overpass"		""
+				"de_vertigo"		""
+				"ar_shoots"			""
+				"ar_baggage"		""
+				"de_whistle"		""
+				"de_palais"			""
+				"workshop/3085490518/gd_rialto"		""
+				"workshop/3070550406/de_safehouse"		""
+				"workshop/3070563536/de_lake"		""
+				"workshop/3070581293/de_bank"		""
+				"workshop/3070612859/de_shortdust"		""
+				"workshop/3071005299/de_assembly"		""
+				"workshop/3329387648/de_cbble"		""
+				"workshop/3070244931/de_cache"		""
+				"workshop/3079872050/de_pipeline"		""
+				"workshop/3075706807/de_biome"		""
+				"workshop/3070346180/mp_raid"		""
+				"workshop/3070766070/de_mutiny"		""
+				"workshop/3070594412/cs_assault"		""
+				"workshop/3072352643/de_ruins_d_prefab"		""
+				"workshop/3070284539/de_train"		""
+				"workshop/3082340867/de_sakura"		""
+				"workshop/3165559377/de_memento"		""
+				"workshop/3309665004/skatepark"		""
+			}
+		}
+		"mg_dm"
+		{
+			"name"			"mg_dm"
+			"displayname"			"Deathmatch"
+			"maps"
+			{
+				"cs_italy"			""
+				"cs_office"			""
+				"de_vertigo"		""
+				"de_ancient"		""
+				"de_anubis"			""
+				"de_dust2"			""
+				"de_inferno"		""
+				"de_mirage"			""
+				"de_nuke"			""
+				"de_train"			""
+				"de_basalt"			""
+				"de_edin"			""
+				"de_overpass"		""
+				"de_vertigo"		""
+				"ar_shoots"			""
+				"ar_baggage"		""
+				"workshop/3085490518/gd_rialto"		""
+				"workshop/3070550406/de_safehouse"		""
+				"workshop/3070563536/de_lake"		""
+				"workshop/3070581293/de_bank"		""
+				"workshop/3070612859/de_shortdust"		""
+				"ar_pool_day"		""
+				"workshop/3070238628/fy_iceworld"		""
+				"workshop/3072640420/daymare"		""
+				"workshop/3070348309/aim_theorem"		""
+				"workshop/3071005299/de_assembly"		""
+				"workshop/3329387648/de_cbble"		""
+				"workshop/3070244931/de_cache"		""
+				"workshop/3079872050/de_pipeline"		""
+				"workshop/3075706807/de_biome"		""
+				"workshop/3077599381/dm_desk"		""
+				"workshop/3088183343/fun_bounce"		""
+				"workshop/3082605693/1v1aim_map_longdustversion_d"		""
+				"workshop/3070291913/ar_churches_s2r"		""
+				"workshop/3134466699/mcdonalds"		""
+				"workshop/3082113929/aim_ag_texture_city_advanced"		""
+				"workshop/3080973179/traningoutside"		""
+				"workshop/3086555291/shipment_version_1_0"		""
+				"workshop/3074961197/aim_ag_texture2"		""
+				"workshop/3095778105/aim_ag_texture_jungle"		""
+				"workshop/3071890065/cs2_bloodstrike"		""
+				"workshop/3109232789/gg_simpsons_vs_flanders_v2"		""
+				"workshop/3108513658/de_akiba"		""
+				"workshop/3112806723/cs_facingworlds-99"		""
+				"workshop/3070284539/de_train"		""
+				"workshop/3082340867/de_sakura"		""
+				"workshop/3165559377/de_memento"		""
+				"workshop/3152430710/de_mills"		""
+				"workshop/3121217565/de_thera"		""
+				"workshop/3257582863/de_palais"		""
+				"workshop/3343693110/school_d_environment_prefab"		""
+			}
+		}
+		"mg_gg"
+		{
+			"name"			"mg_gg"
+			"displayname"			"GunGame"
+			"maps"
+			{
+				"ar_shoots"			""
+				"ar_baggage"		""
+				"ar_pool_day"		""
+				"workshop/3071005299/de_assembly"		""
+				"workshop/3070238628/fy_iceworld"		""
+				"workshop/3072640420/daymare"		""
+				"workshop/3134466699/mcdonalds"		""
+				"workshop/3070348309/aim_theorem"		""
+				"workshop/3070550406/de_safehouse"		""
+				"workshop/3070563536/de_lake"		""
+				"workshop/3070581293/de_bank"		""
+				"workshop/3088183343/fun_bounce"		""
+				"workshop/3082605693/1v1aim_map_longdustversion_d"		""
+				"workshop/3070291913/ar_churches_s2r"		""
+				"workshop/3082113929/aim_ag_texture_city_advanced"		""
+				"workshop/3080973179/traningoutside"		""
+				"workshop/3086555291/shipment_version_1_0"		""
+				"workshop/3074961197/aim_ag_texture2"		""
+				"workshop/3095778105/aim_ag_texture_jungle"		""
+				"workshop/3071890065/cs2_bloodstrike"		""
+				"workshop/3109232789/gg_simpsons_vs_flanders_v2"		""
+				"workshop/3343693110/school_d_environment_prefab"		""
+			}
+		}
+		"mg_1v1"
+		{
+			"name"			"mg_1v1"
+			"displayname"			"1v1"
+			"maps"
+			{
+				"workshop/3070253400/aim_redline_fp"		""
+			}
+		}
+		"mg_bhop"
+		{
+			"name"			"mg_bhop"
+			"displayname"			"BHop"
+			"maps"
+			{
+				"workshop/3077211069/bhop_at_night"		""
+				"workshop/3077153735/bhop_ragnarok"		""
+				"workshop/3077475505/bhop_zunron"		""
+				"workshop/3077596014/bhop_1derland"		""
+				"workshop/3078523849/bhop_whiteshit"		""
+				"workshop/3082038560/bhop_cherryblossom"		""
+				"workshop/3088973190/bhop_arcturus"		""
+				"workshop/3095219437/bhop_kiwi_cwfx"		""
+			}
+		}
+		"mg_kz"
+		{
+			"name"			"mg_kz"
+			"displayname"			"KZ"
+			"maps"
+			{
+				"workshop/3074758439/only_up"		""
+				"workshop/3343029934/kz_dima"		""
+				"workshop/3170668869/ewii_challenge"		""
+				"workshop/3070220367/kz_hub"		""
+				"workshop/3145779590/hellcasecyrilchallenge"		""
+				"workshop/3070194623/kz_checkmate"		""
+				"workshop/3086304337/kz_victoria"		""
+				"workshop/3072219045/kz_rc_stonehenge"		""
+				"workshop/3083714192/kz_sxb2_cxz"		""
+				"workshop/3083509404/kz_rc_twotowers"		""
+				"workshop/3078311932/kz_simplyhard"		""
+				"workshop/3077122656/kz_nomibo"		""
+				"workshop/3076000218/kz_sxb2_biewan"		""
+				"workshop/3072744536/kz_ggsh"		""
+				"workshop/3072699538/kz_ltt"		""
+			}
+		}
+		"mg_surf"
+		{
+			"name"			"mg_surf"
+			"displayname"			"Surf"
+			"maps"
+			{
+				"workshop/3076153623/surf_kitsune"		""
+				"workshop/3073875025/surf_utopia_njv"		""
+				"workshop/3070321829/surf_beginner"		""
+				"workshop/3076980482/surf_mesa_revo"		""
+				"workshop/3080544577/surf_deathstar"		""
+				"workshop/3082548297/surf_rookie"		""
+				"workshop/3098972556/surf_benevolent"		""
+				"workshop/3088413071/surf_ace"		""
+			}
+		}
+		"mg_prefire"
+		{
+			"name"			"mg_prefire"
+			"displayname"			"Prefire"
+			"maps"
+			{
+				"de_ancient"		""
+				"de_dust2"			""
+				"de_inferno"		""
+				"de_mirage"			""
+				"de_overpass"		""
+				"de_anubis"			""
+				"de_nuke"			""
+			}
+		}
+		"mg_casual-1.6"
+		{
+			"name"			"mg_casual-1.6"
+			"displayname"			"Casual 1.6"
+			"maps"
+			{
+				"workshop/3104677430/as_oilrig"				""
+				"workshop/3215705579/cs_assult_classic"		""
+				"workshop/3213800338/de_aztec_classic"		""
+				"workshop/3078095785/de_dust_classic"		""
+				"workshop/3201205818/de_dust2_classic"		""
+				"workshop/3212419403/cs_italy_classic"		""
+				"workshop/3144773563/cs_militia_classic"	""
+				"workshop/3205793205/de_nuke_classic"		""
+				"workshop/3216844784/cs_office_classic"		""
+				"workshop/3217247541/de_survivor_classic_m"	""
+			}
+		}
+	}
+}
